@@ -1,0 +1,6 @@
+[console_scripts]
+initialize_PersonalDevelopment_db = PersonalDevelopment.scripts.initialize_db:main
+
+[paste.app_factory]
+main = PersonalDevelopment:main
+
