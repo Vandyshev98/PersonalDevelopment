@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<title>area radar | Chart.js sample</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+</head>
+<body>
+    <div style="width: 100%;
+            max-width: 500px;
+            padding: 15px;
+            margin: auto;">
+        <canvas id="myRadarChart" width="900" height="900"
+                style="display: block; width:721px; height: 360px; border:1px solid #000000;"></canvas>
+    </div>
+
+{#    {{ user_id }}#}
+	<div>
+		<table>
+			<tbody>
+				<tr>
+					<th> Неделя </th>
+					<th> Направления </th>
+					<th> Рейтинг </th>
+				</tr>
+				<tr>
+					<td> 1-я неделя </td>
+					<td> Cон <br> Работа <br> Семья <br> Друзья <br> Хобби <br> Учеба </td>
+					<td> 6 <br> 12 <br> 10 <br> 9 <br> 6 <br> 5 </td>
+				<tr>
+			</tbody>
+		</table>
+	</div>
+<script>
+var ctx = document.getElementById("myRadarChart");
+var datasets = [{
+		label: '2-я неделя',
+        data: [8, 15, 10, 8, 4, 2],
+		fill: true,
+		backgroundColor: 'rgba(255, 99, 132, 0.2)',
+		borderColor: 'rgba(255,99,132,1)',
+		borderWidth: 2
+	},
+	{
+		label: '1-я неделя',
+        data: [6, 12, 10, 9, 6, 5],
+		fill: true,
+		backgroundColor: 'rgba(54, 162, 235, 0.2)',
+		borderColor: 'rgba(54, 162, 235, 1)',
+		borderWidth: 2
+	}];
+var datasets2 = '{{ datasets | safe }}';
+var myRadarChart = new Chart(ctx, {
+    type: 'radar',
+    data: {
+      labels: ['Сон', 'Работа', 'Семья', 'Друзья', 'Хобби', 'Учеба'],
+      datasets: JSON.parse(datasets2)//JSON.parse(JSON.stringify(datasets))
+	},
+    options: {
+		scale: {
+			// Hides the scale if false
+			display: true,
+			ticks: {
+                    beginAtZero:true
+            }
+		}
+	}
+});
+</script>
+</body>
+</html>
+
