@@ -14,3 +14,7 @@ def main_view(request):
 @view_config(route_name='user_main', renderer='../templates/user_main.jinja2')
 def user_main(request):
     return {}
+
+@view_config(route_name='FAQ',renderer='../static/FAQ.jinja2')
+def FAQ(request):
+    return {}

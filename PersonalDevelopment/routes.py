@@ -11,3 +11,4 @@ def includeme(config):
     config.add_route('radar_example', '/radar_example')
     config.add_route('delete_user_data', '/delete_user_data')
     config.add_route('check_db', '/check_db')
+    config.add_route('FAQ','/FAQ')

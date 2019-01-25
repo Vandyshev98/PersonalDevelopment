@@ -6,7 +6,7 @@
     <meta name="description">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
      <link href="../static/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-    <title>Информационная страница Personal Development</title>
+    <title>Главная страница</title>
     <style>
         body {
             background-color: #f4f4f4;
@@ -18,7 +18,7 @@
         .head {
             width: 100%;
             background-color: lightslategrey;
-            height: 140px;
+            height: 80px;
             padding: 10px;
         }
         .card1{
@@ -38,6 +38,9 @@
         .card4 {
             float: right;
         }
+        .card5 {
+            margin-left: 40%;
+        }
 
 
 
@@ -46,17 +49,13 @@
     <body>
         <div class="head">
             <h1> Главная страница пользователя </h1>
-        <div class="head-button">
-        <a href="user_main" class="btn btn btn-primary"
-           style="width: 120px;height: 60px;background-color:blue;padding: 2px;">Начать использование </a>
-        </div>
         </div>
         <div class="card1" style="width: 18rem;">
         <img class="card-img-top" src="../static/Example.png" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title"> Radar Example </h5>
              <p class="card-text">Пример направлений </p>
-            <a href="/radar_example" class="radar_example">Перейти</a>
+            <a href="/radar_example" class="btn btn btn-primary">Перейти</a>
         </div>
         </div>
 
@@ -65,16 +64,16 @@
         <div class="card-body">
             <h5 class="card-title">Статистика</h5>
             <p class="card-text">Посмотреть свою статистику.</p>
-            <a href="/statistic" class="statistic">Перейти</a>
+            <a href="/statistics" class="btn btn btn-primary">Перейти</a>
         </div>
         </div>
 
         <div class="card3" style="width: 18rem;">
         <img class="card-img-top" src="../static/add.png" alt="Card image cap">
         <div class="card-body">
-            <h5 class="card-title">Пополнить</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="/add" class="add">Перейти</a>
+            <h5 class="card-title">Создать направление</h5>
+            <p class="card-text">Создать направления для себя.</p>
+            <a href="/create_directions" class="btn btn btn-primary">Перейти</a>
         </div>
         </div>
         <div class="card4" style="width: 18rem;">
@@ -82,7 +81,14 @@
         <div class="card-body">
             <h5 class="card-title">Выйти</h5>
              <p class="card-text">Выйти из своего аккаунта.</p>
-            <a href="/logout" class="logout">Перейти</a>
+            <a href="/logout" class="btn btn btn-primary">Перейти</a>
         </div>
+        </div>
+        <div class="card5" style="width: 18rem;">
+         <img class="card-img-top" src="../static/Calendar.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Добавить информацию</h5>
+             <p class="card-text">Добавить информацию о вашей деятельности по времени.</p>
+            <a href="/add_data" class="btn btn btn-primary">Перейти</a>
         </div>
     </body>
