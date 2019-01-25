@@ -6,7 +6,7 @@ import re
 from PersonalDevelopment import models
 
 
-@view_config(route_name='main_page', renderer='../static/main.jinja2')
+@view_config(route_name='main_page', renderer='../static/MainPage.jinja2')
 def main_view(request):
     return {}
 
