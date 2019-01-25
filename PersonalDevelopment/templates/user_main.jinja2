@@ -1,15 +1,88 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title> Test </title>
+        <meta charset="UTF-8">
+	<link rel="stylesheet" href="main.css">
+    <meta name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <link href="../static/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <title>Информационная страница Personal Development</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            min-width: 1400px;
+        }
+        h1{
+            margin-left: 35%;
+        }
+        .head {
+            width: 100%;
+            background-color: lightslategrey;
+            height: 140px;
+            padding: 10px;
+        }
+        .card1{
+            margin-bottom: 5%;
+            float: left;
+            width: 30%;
+        }
+        .card2 {
+            float: right;
+
+        }
+        .card3{
+            width: 30%;
+            float: left;
+        }
+
+        .card4 {
+            float: right;
+        }
+
+
+
+    </style>
     </head>
     <body>
-        <h1> Главная страница пользователя </h1>
-        <a href="/radar_example">Radar example</a>
-        <a href="/statistics">Статистика</a>
-        <a href="/add">Заполнение</a>
-        <a href="/logout">Выйти</a>
+        <div class="head">
+            <h1> Главная страница пользователя </h1>
+        <div class="head-button">
+        <a href="user_main" class="btn btn btn-primary"
+           style="width: 120px;height: 60px;background-color:blue;padding: 2px;">Начать использование </a>
+        </div>
+        </div>
+        <div class="card1" style="width: 18rem;">
+        <img class="card-img-top" src="../static/Example.png" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title"> Radar Example </h5>
+             <p class="card-text">Пример направлений </p>
+            <a href="/radar_example" class="radar_example">Перейти</a>
+        </div>
+        </div>
 
+        <div class="card2" style="width: 18rem;">
+        <img class="card-img-top" src="../static/Statistic.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Статистика</h5>
+            <p class="card-text">Посмотреть свою статистику.</p>
+            <a href="/statistic" class="statistic">Перейти</a>
+        </div>
+        </div>
+
+        <div class="card3" style="width: 18rem;">
+        <img class="card-img-top" src="../static/add.png" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Пополнить</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="/add" class="add">Перейти</a>
+        </div>
+        </div>
+        <div class="card4" style="width: 18rem;">
+         <img class="card-img-top" src="../static/logout.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Выйти</h5>
+             <p class="card-text">Выйти из своего аккаунта.</p>
+            <a href="/logout" class="logout">Перейти</a>
+        </div>
+        </div>
     </body>
-</html>
