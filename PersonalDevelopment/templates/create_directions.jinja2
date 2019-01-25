@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Daniil Vandyshev">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title> Создать данные по направлениям</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+    <style>
+        .head {
+            width: 100%;
+            background-color: yellowgreen;
+            height: 50px;
+            padding: 10px;
+        }
+
+        .head-button {
+            width: 140px;
+            float: left;
+        }
+
+        .row {
+            padding: 5px;
+        }
+
+        body {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+<div class="head">
+    <div class="head-button">
+        <a href="user_main" class="btn btn btn-primary"
+           style="width: 120px;height: 30px;background-color: orangered;padding: 2px;">На главную </a>
+    </div>
+    <div class="head-button">
+        <a href="info" class="btn btn btn-primary"
+           style="width: 120px;height: 30px;background-color: orangered;padding: 2px;"> Информация </a>
+    </div>
+</div>
+<div style="width: 30%; padding: 15px; margin: auto; float: left; min-width: 420px">
+    <h1> Созадь направления</h1>
+    <p> Заполните по крайней мере три направления. По этим направлениям вы будете отслеживать и контролировать свою
+        статистику</p>
+    <div>
+        <form method="post" action="create_directions">
+            <div class="row">
+                <input type="text" class="form-control" name="1" placeholder="Первое направление">
+            </div>
+            <div class="row">
+                <input type="text" class="form-control" name="2" placeholder="Второе направление">
+            </div>
+            <div class="row">
+                <input type="text" class="form-control" name="3" placeholder="Третье направление">
+            </div>
+            <div class="row">
+                <input type="text" class="form-control" name="4" placeholder="Четвертое направление">
+            </div>
+            <div class="row">
+                <input type="text" class="form-control" name="5" placeholder="Пятое направление">
+            </div>
+            <div class="row">
+                <input type="text" class="form-control" name="6" placeholder="Шестое направление">
+            </div>
+            <div class="row">
+                <input type="text" class="form-control" name="7" placeholder="Седьмое направление">
+            </div>
+            <div class="row">
+                <input type="text" class="form-control" name="8" placeholder="Восьмое направление">
+            </div>
+
+            <input class="btn btn btn-primary btn-block" style="width: 140px; float: left" type="submit"
+                   value="Сохранить">
+        </form>
+    </div>
+</div>
+<div class="card" style="width: 18rem; float: right; margin: 60px;">
+    <img class="card-img-top" src="../static/faq_picture.png" alt="Есть вопрос?">
+    <div class="card-body">
+        <h5 class="card-title">Есть вопрос?</h5>
+        <p class="card-text">Получите ответы на самые часто задаваемые вопросы или задайте свой.</p>
+        <a href="/faq" class="btn btn-primary">FAQ</a>
+    </div>
+</div>
+<div style="position:absolute; bottom: 0;width: 100%; margin: 0px 10px 10px 10px;">
+    <img style="display: block;margin-left: auto;margin-right: auto;" src="../static/logo.png" alt="" width="218"
+         height="72">
+    <p class="text-muted text-center">&copy; Екатеринбург, 2019</p>
+</div>
+</body>

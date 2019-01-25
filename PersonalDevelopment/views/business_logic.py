@@ -21,3 +21,13 @@ def statistics(request):
     return {'datasets': datasets, 'labels': labels}
 
 
+@view_config(route_name='create_directions', renderer='../templates/create_directions.jinja2')
+def add_directions(request):
+    return {}
+
+
+@view_config(route_name='add_data', renderer='../templates/add_data.jinja2')
+def add_data(request):
+    return {}
+
+

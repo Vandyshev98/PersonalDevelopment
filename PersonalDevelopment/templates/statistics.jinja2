@@ -1,21 +1,76 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="ru">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
     <meta name="author" content="Daniil Vandyshev">
+    <meta name="generator" content="Jekyll v3.8.5">
     <title>Статистика Personal Developer</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+    <style>
+        .head {
+            width: 100%;
+            background-color: yellowgreen;
+            height: 50px;
+            padding: 10px;
+        }
+
+        .head-button {
+            width: 140px;
+            float: left;
+        }
+
+        .row {
+            padding: 5px;
+        }
+
+        body {
+            background-color: #f4f4f4;
+        }
+    </style>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
 </head>
 <body>
+<div class="head">
+    <div class="head-button">
+        <a href="user_main" class="btn btn btn-primary"
+           style="width: 120px;height: 30px;background-color: orangered;padding: 2px;">На главную </a>
+    </div>
+    <div class="head-button">
+        <a href="info" class="btn btn btn-primary"
+           style="width: 120px;height: 30px;background-color: orangered;padding: 2px;"> Информация </a>
+    </div>
+</div>
 <h1> Статистика </h1>
-<a href="user_main"> На главную </a>
-<div style="width: 100%;
-            max-width: 500px;
+<div name="page" style="min-width: 500px">
+    <div style="width: 500px;
             padding: 15px;
-            margin: auto;">
+            margin: auto;
+            float: left">
         <canvas id="statisticsRadar" width="900" height="900"
                 style="display: block; width:721px; height: 360px; border:1px solid #000000;"></canvas>
     </div>
+    <div style="float: right">
+        <div class="card" style="width: 18rem; float: right; margin: 60px;">
+            <img class="card-img-top" src="../static/dir_exmpl.png" alt="Добавьте данные">
+            <div class="card-body">
+                <h5 class="card-title">Добавьте данные</h5>
+                <p class="card-text">Внесите новые данные за прошедшую неделю. Взгляните на общую картину и сделайте выводы.</p>
+                <a href="/statistics" class="btn btn-primary">Статистика</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="position:absolute; bottom: 0;width: 100%; margin: 0px 10px 10px 10px;">
+    <img style="display: block;margin-left: auto;margin-right: auto;" src="../static/logo.png" alt="" width="218"
+         height="72">
+    <p class="text-muted text-center">&copy; Екатеринбург, 2019</p>
+</div>
 <script>
     var ctx = document.getElementById("statisticsRadar");
 

@@ -2,6 +2,8 @@ def includeme(config):
     config.add_static_view('static', 'static', cache_max_age=3600)
     config.add_route('main_page', '/')
     config.add_route('user_main', '/user_main')
+    config.add_route('create_directions', '/create_directions')
+    config.add_route('add_data', '/add_data')
     config.add_route('registration', '/registration')
     config.add_route('login', '/login')
     config.add_route('logout', '/logout')
