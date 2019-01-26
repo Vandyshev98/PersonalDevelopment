@@ -46,7 +46,7 @@
 </div>
 <div style="width: 30%; padding: 15px; margin: auto; float: left; min-width: 420px">
     <h1> Созадь направления</h1>
-    <p> Заполните по крайней мере три направления. По этим направлениям вы будете отслеживать и контролировать свою
+    <p> Заполните по крайней мере три направления. Используйте английский язык. По этим направлениям вы будете отслеживать и контролировать свою
         статистику</p>
     <div>
         <form method="post" action="create_directions">
@@ -74,7 +74,11 @@
             <div class="row">
                 <input type="text" class="form-control" name="8" placeholder="Восьмое направление">
             </div>
-
+            <div class="content">
+            <span class="font" style="color: red">
+                {{ message }}
+            </span>
+            </div>
             <input class="btn btn btn-primary btn-block" style="width: 140px; float: left" type="submit"
                    value="Сохранить">
         </form>
