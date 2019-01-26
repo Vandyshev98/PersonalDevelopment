@@ -79,16 +79,16 @@
 </div>
 <div style="width: 30%; padding: 15px; margin: auto; float: left; min-width: 420px;">
     <h1>Добавить данные</h1>
-    <p>Заполните вашу статистику за эту неделю</p>
+    <p>Заполните вашу статистику за эту неделю. Используйте числа.</p>
     <div>
         <form method="post" action="add_data">
             {% for label in labels %}
                 <div class="row">
-                    <input type="text" class="form-control" placeholder=label>
+                    <input type="text" class="form-control" placeholder={{ label }} name={{ label }}>
                 </div>
             {% endfor %}
             <div class="row">
-                <input type="text" class="form-control" placeholder="номер недели">
+                <input type="text" class="form-control" placeholder="номер недели" name="week_number">
             </div>
             <input class="btn btn btn-primary btn-block" style="width: 120px; float: left" type="submit"
                    value="Сохранить">

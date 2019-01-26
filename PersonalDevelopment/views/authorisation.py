@@ -1,6 +1,8 @@
 from pyramid.httpexceptions import HTTPFound
 from pyramid.response import Response
 from pyramid.view import view_config
+from pyramid.security import remember
+from pyramid.security import forget
 import re
 
 from PersonalDevelopment import models
@@ -30,10 +32,11 @@ def registration(request):
         except Exception as ex:
             print(ex)
             return {'message': 'Ошибка на стороне сервера'}
+    if request.user:
+        return HTTPFound(location='user_main')
     return {}
 
 
-# from pyramid.security import remember
 @view_config(route_name='login', renderer='../templates/login.jinja2')
 def login(request):
     if (request.POST is not None) & (len(request.POST) > 0):
@@ -51,7 +54,9 @@ def login(request):
                     return {'message': 'Нет пользователя с таким логином'}
                 user = user_in_list.pop(0)
                 if user.check_password(user_password):
-                    return HTTPFound(location='user_main')
+                    # запоминаем пользователя
+                    headers = remember(request, user.id)
+                    return HTTPFound(location='user_main', headers=headers)
                 else:
                     return {'message': 'Неверный пароль'}
             else:
@@ -59,16 +64,16 @@ def login(request):
         except Exception as ex:
             print(ex)
             return {'message': 'Ошибка на стороне сервера'}
-    else:
-        return {}
-    # headers = remember(request, 'Daniil1')
-    # return HTTPFound(location=request.route_url('radar_example'),
-    #                  headers=headers)
+    if request.user:
+        return HTTPFound(location='user_main')
+    return {}
 
 
 @view_config(route_name='logout', renderer='../templates/login.jinja2')
 def logout(request):
-    return {}
+    # забываем пользователя
+    headers = forget(request)
+    return HTTPFound(location='login', headers=headers)
 
 
 def correct_registration_input_data(email, password, password_repeat):
@@ -83,7 +88,7 @@ def correct_registration_input_data(email, password, password_repeat):
         return 'Некоректный пароль'
     if re.match(r'[A-Za-z0-9@#$%,.^&+=]{8,}', password_repeat) is None:
         return 'Некоректный пароль'
-    if re.match(r'[@]{5,}', email) is None:
+    if re.match(r'[A-Za-z0-9@#$%,.^&+=]{5,}', email) is None:
         return 'Некоректный email'
     if password != password_repeat:
         return 'Пароли не совпадают'
@@ -99,6 +104,6 @@ def correct_login_input_data(email, password):
     """
     # пароль не меньше 8 символов
     if re.match(r'[A-Za-z0-9@#$%,.^&+=]{8,}', password):
-        if re.match(r'[@]{5,}', email):
+        if re.match(r'[A-Za-z0-9@#$%,.^&+=]{5,}', email):
             return True
     return False
