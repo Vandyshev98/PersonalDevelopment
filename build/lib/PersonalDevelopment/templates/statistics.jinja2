@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Daniil Vandyshev">
+    <title>Статистика Personal Developer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+</head>
+<body>
+<h1> Статистика </h1>
+<a href="user_main"> На главную </a>
+<div style="width: 100%;
+            max-width: 500px;
+            padding: 15px;
+            margin: auto;">
+        <canvas id="statisticsRadar" width="900" height="900"
+                style="display: block; width:721px; height: 360px; border:1px solid #000000;"></canvas>
+    </div>
+<script>
+    var ctx = document.getElementById("statisticsRadar");
+
+    var datasets = '{{ datasets | safe }}';
+    var labels = '{{ labels | safe }}';
+
+    var myRadarChart = new Chart(ctx, {
+        type: 'radar',
+        data: {
+            labels: JSON.parse(labels),
+            datasets: JSON.parse(datasets)
+        },
+        options: {
+            scale: {
+                // Hides the scale if false
+                display: true,
+                ticks: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+</body>

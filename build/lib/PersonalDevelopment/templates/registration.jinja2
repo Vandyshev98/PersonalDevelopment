@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Daniil Vandyshev">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Страница регистрации в Personal Developer</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .font {
+            color: red;
+        }
+
+        .center {
+            width: 100%;
+            max-width: 420px;
+            padding: 15px;
+            margin: auto;
+        }
+
+        .content {
+            width: 100%;
+            max-width: 420px;
+            margin: auto;
+        }
+
+        .inner-content {
+            width: 90%;
+            margin: auto;
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="../static/floating-labels.css" rel="stylesheet">
+</head>
+<body>
+<div class="center">
+    <form method="post" class="form-signin" action="registration">
+        <div class="text-center mb-4">
+            {#    <img class="mb-4" src="../static/pyramid-16x16.png" alt="" width="72" height="72">#}
+            <h1 class="h3 mb-3 font-weight-normal">Personal Developer</h1>
+            {#    <p>Build form controls with floating labels via the <code>:placeholder-shown</code> pseudo-element. <a href="https://caniuse.com/#feat=css-placeholder-shown">Works in latest Chrome, Safari, and Firefox.</a></p>#}
+        </div>
+
+        <div class="form-label-group">
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email" required
+                   autofocus>
+            <label for="inputEmail">Email адрес</label>
+        </div>
+
+        <div class="form-label-group">
+            <input id="inputName" class="form-control" placeholder="Password" name="name">
+            <label for="inputPasswordRepeat">ФИО</label>
+        </div>
+
+        <div class="form-label-group">
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password"
+                   required>
+            <label for="inputPassword">Пароль</label>
+        </div>
+
+        <div class="form-label-group">
+            <input type="password" id="inputPasswordRepeat" class="form-control" placeholder="Password"
+                   name="passwordRepeat" required>
+            <label for="inputPasswordRepeat">Повторите пароль</label>
+        </div>
+
+        <div class="content">
+            <span class="font">
+                {{ message }}
+            </span>
+        </div>
+        <input class="btn btn-lg btn-primary btn-block" type="submit" value="Зарегестрироваться">
+    </form>
+    <div class="center">
+        <table class="center">
+            <tbody>
+            <tr>
+                <th>
+                    <div class="inner-content">
+                        <a class="btn btn-lg btn-primary btn-block" href="login">Войти</a>
+                    </div>
+                </th>
+                <th>
+                    <div class="inner-content">
+                        <a class="btn btn-lg btn-info btn-block" href="info">Инфо</a>
+                    </div>
+                </th>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="center">
+        <p class="mt-5 mb-3 text-muted text-center">&copy; Екатеринбург, 2019</p>
+    </div>
+</div>
+</body>
+</html>
